@@ -1,5 +1,5 @@
 """
-Define an HPVsim simulation for Ethiopia
+Define an HPVsim simulation for Uganda
 """
 
 # Standard imports
@@ -10,7 +10,6 @@ import pylab as pl
 
 # Imports from this repository
 import behavior_inputs as bi
-import utils as ut
 
 # %% Settings and filepaths
 

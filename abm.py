@@ -126,7 +126,7 @@ population[population.State == "S"]
 # Simulating the agent-based model over time
 #################################################
 
-# Here we define a function that generates our population
+# Here we define a function that generates our population 
 def PopGen(nPop, E0, I0):
     Population = pd.DataFrame({'AgentNo': np.arange(1, nPop + 1),
                                'State': 'S',

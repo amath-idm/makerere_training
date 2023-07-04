@@ -9,15 +9,15 @@ import numpy as np
 import matplotlib.pyplot as pl
 
 # Read in the data and make a plot
-flu = pd.read_csv("influenza_cases.csv")
+flu = pd.read_csv("flu_cases.csv")
 # pl.plot(flu['day'], flu['cases'])
 # pl.xlabel("Day")
 # pl.ylabel("Number of cases")
 # # pl.show()
 
 # Define our parameters
-beta = 0.5
-gamma = 0.2
+beta = 0.3
+gamma = 0.15
 npts = 100
 I0 = 1
 N = 1000
@@ -45,7 +45,7 @@ for t in x[:-1]:
 # Plot the model estimate of the number of infections alongside the data
 time = x * dt
 pl.plot(time, I, label='Model')
-# pl.scatter(time, flu['cases'], label='Data')
+pl.scatter(time, flu['cases'], label='Data')
 pl.legend()
 pl.show()
 

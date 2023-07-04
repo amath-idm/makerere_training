@@ -43,10 +43,16 @@ for t in x[:-1]:
     I[t + 1] = I[t] + infections - recoveries
     R[t + 1] = R[t] + recoveries
 
-# Plot the model estimate of the number of infections alongside the data
+# # Plot the model estimate of the number of infections alongside the data
 time = x * dt
-pl.plot(time, I, label='Model')
-pl.scatter(time, flu['cases'], label='Data')
+# pl.plot(time, I, label='Model')
+# pl.scatter(time, flu['cases'], label='Data')
+# pl.legend()
+# pl.show()
+
+# Plot just the first few days
+pl.plot(time[:6], I[:6], label='Model')
+pl.scatter(time[:6], flu['cases'][:6], label='Data')
 pl.legend()
 pl.show()
 

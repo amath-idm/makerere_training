@@ -3,6 +3,6 @@
 n <- 1000  # Choose how many points to use
 x <- rnorm(n)  # Create x coordinates
 y <- rnorm(n)  # Create y coordinates
-c <- sqrt(x^2 + y^2)  # Set color as distance from center
+c <- 1+sqrt(x^2 + y^2)  # Set color as distance from center
 
-plot(x, y, col = c, cex = 0.5)  # Plot
+plot(x, y, col=c, pch=16, cex=0.5)  # Plot

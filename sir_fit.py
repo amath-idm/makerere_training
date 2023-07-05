@@ -10,10 +10,6 @@ import matplotlib.pyplot as pl
 
 # Read in the data and make a plot
 flu = pd.read_csv("flu_cases.csv")
-# pl.plot(flu['day'], flu['cases'])
-# pl.xlabel("Day")
-# pl.ylabel("Number of cases")
-# # pl.show()
 
 # Define our parameters
 beta = 0.3
@@ -29,12 +25,13 @@ S = np.zeros(npts)
 I = np.zeros(npts)
 R = np.zeros(npts)
 
-# Initial conditionsbeta * S[t] * I[t]/N
+# Initial conditions
 S[0] = N - I0
 I[0] = I0
 
 # Simulate the model over time
 for t in x[:-1]:
+
     infections = beta * S[t] * I[t]/N * dt
     recoveries = gamma * I[t] * dt
 
@@ -42,10 +39,11 @@ for t in x[:-1]:
     I[t + 1] = I[t] + infections - recoveries
     R[t + 1] = R[t] + recoveries
 
-# Plot the model estimate of the number of infections alongside the data
+# # Plot the model estimate of the number of infections alongside the data
 time = x * dt
 pl.plot(time, I, label='Model')
 pl.scatter(time, flu['cases'], label='Data')
 pl.legend()
 pl.show()
+
 

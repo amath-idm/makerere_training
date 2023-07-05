@@ -1,4 +1,5 @@
 # Basic plotting example
+# Chat GPT's initial attempt at converting simple_plot.py; see simple_plot.R for the corrected version
 
 n <- 1000  # Choose how many points to use
 x <- rnorm(n)  # Create x coordinates

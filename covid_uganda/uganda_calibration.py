@@ -13,7 +13,6 @@ cv.options(dpi=150)
 
 start_day = process_data.start_day
 end_day   = process_data.end_day
-
 total_pop = 45.85e6 # Uganda population size
 
 variants = [
@@ -57,7 +56,7 @@ if __name__ == '__main__':
     msim.plot(fig_args=dict(figsize=(16,10)), to_plot=to_plot)
     fit.plot()
     # msim.plot(['new_diagnoses', 'new_known_deaths', 'new_doses'])
-    cv.savefig('uganda-calibration.png')
+    cv.savefig('uganda_calibration.png')
     print(fit.mismatches)
     print(fit.mismatch)
     

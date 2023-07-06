@@ -15,8 +15,7 @@ cv.options(dpi=150)
 
 start_day = process_data.start_day
 end_day   = process_data.end_day
-
-total_pop = sc.loadjson(process_data.popout)['total']
+total_pop = 45.85e6 # Uganda population size
 
 variants = [
     cv.variant(parameters.variants.delta, days='2021-05-25', n_imports=100, label='delta', rescale=False),
@@ -77,6 +76,6 @@ if __name__ == '__main__':
     mm = cv.MultiSim.merge(msim1, msim2, msim3, base=True)
     mm.plot(['cum_infections', 'cum_deaths'])
     if do_save:
-        cv.savefig('uganda-scenarios.png')
+        cv.savefig('uganda_scenarios.png')
 
     T.toc('Done')

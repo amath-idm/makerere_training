@@ -12,5 +12,6 @@ Once you have installed HPVsim and Covasim, you can run test_install to make sur
 
 ## Structure
 - the folder `hpvsim_uganda` contains scripts for running HPVsim for Uganda.
+- the folder `ltbi` contains scripts for analysing latent TB infection data.
 - the folder `covasim` contains scripts for running Covasim.
 

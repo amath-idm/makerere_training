@@ -20,6 +20,8 @@ x_test = ltbi[variables].to_numpy()[n_train:]
 y_test = ltbi['infected'].to_numpy()[n_train:]
 
 ### Make classifers
+# See more options here:
+# https://towardsdatascience.com/top-10-binary-classification-algorithms-a-beginners-guide-feeacbd7a3e2
 
 # Logistic regression
 lr = LogisticRegression(max_iter=1000)

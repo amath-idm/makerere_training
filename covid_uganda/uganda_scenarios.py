@@ -49,7 +49,7 @@ pars = dict(
     scaled_pop = total_pop,
     pop_infected = 0,
     pop_type = 'hybrid',
-    location = 'vietnam',
+    location = 'uganda',
     start_day = start_day,
     end_day = end_day,
     variants = variants,
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     
     T = sc.timer()
 
-    n_runs = 10
+    n_runs = 3
     msim1 = cv.MultiSim(sim1).run(n_runs=n_runs)
     msim2 = cv.MultiSim(sim2).run(n_runs=n_runs)
     msim3 = cv.MultiSim(sim3).run(n_runs=n_runs)
@@ -77,6 +77,6 @@ if __name__ == '__main__':
     mm = cv.MultiSim.merge(msim1, msim2, msim3, base=True)
     mm.plot(['cum_infections', 'cum_deaths'])
     if do_save:
-        cv.savefig('vietnam-scenarios.png')
+        cv.savefig('uganda-scenarios.png')
 
     T.toc('Done')

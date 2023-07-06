@@ -14,7 +14,7 @@ cv.options(dpi=150)
 start_day = process_data.start_day
 end_day   = process_data.end_day
 
-total_pop = sc.loadjson(process_data.popout)['total']
+total_pop = 45.85e6 # Uganda population size
 
 variants = [
     cv.variant(parameters.variants.delta, days='2021-05-25', n_imports=100, label='delta', rescale=False),
@@ -35,14 +35,14 @@ pars = dict(
     scaled_pop = total_pop,
     pop_infected = 0,
     pop_type = 'hybrid',
-    location = 'vietnam',
+    location = 'uganda',
     start_day = start_day,
     end_day = end_day,
     variants = variants,
     interventions = [tx, vx, cb]
 )
 
-sim = cv.Sim(pars, datafile=process_data.outfile)
+sim = cv.Sim(pars, datafile='vietnam_data.csv') # TODO: update
 
 if __name__ == '__main__':
     
@@ -55,8 +55,9 @@ if __name__ == '__main__':
     sim = msim.sims[0]
     fit = sim.compute_fit()
     msim.plot(fig_args=dict(figsize=(16,10)), to_plot=to_plot)
-    msim.plot(['new_diagnoses', 'new_known_deaths', 'new_doses'])
-    cv.savefig('vietnam-calibration.png')
+    fit.plot()
+    # msim.plot(['new_diagnoses', 'new_known_deaths', 'new_doses'])
+    cv.savefig('uganda-calibration.png')
     print(fit.mismatches)
     print(fit.mismatch)
     

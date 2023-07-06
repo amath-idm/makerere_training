@@ -9,11 +9,14 @@ import pandas as pd
 # Read in the data and make a plot
 ltbi = pd.read_csv("ltbi_data.csv")
 
-# Create testing and training data
+# Set the size of the training set and the variables
 n_train = 300  # Use this many points to train the model
-x_train = ltbi[['bar_hours', 'school_hours']].to_numpy()[:n_train]
+variables = ['bar_hours', 'school_hours']  # TODO: update this with the ones you want to use
+
+# Create testing and training data
+x_train = ltbi[variables].to_numpy()[:n_train]
 y_train = ltbi['infected'].to_numpy()[:n_train]
-x_test = ltbi[['bar_hours', 'school_hours']].to_numpy()[n_train:]
+x_test = ltbi[variables].to_numpy()[n_train:]
 y_test = ltbi['infected'].to_numpy()[n_train:]
 
 ### Make classifers

@@ -4,15 +4,15 @@ Fit an SIR model to data
 
 
 # Load packages
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as pl
+import pandas as pd  # For reading data
+import numpy as np  # For numerics
+import matplotlib.pyplot as pl  # For plotting
 
 # Read in the data and make a plot
 flu = pd.read_csv("flu_cases.csv")
 
 # Define our parameters
-beta = 0.3
+beta = 0.35
 gamma = 0.15
 npts = 100
 I0 = 1
@@ -43,7 +43,7 @@ for t in x[:-1]:
 time = x * dt
 pl.plot(time, I, label='Model')
 pl.scatter(time, flu['cases'], label='Data')
+pl.title(f'Infections with {beta=}, {gamma=}, R0={beta/gamma:.2f}')
 pl.legend()
 pl.show()
-
 

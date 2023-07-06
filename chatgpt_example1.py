@@ -8,5 +8,9 @@ x1 = np.random.normal(size=n)
 y1 = x1 + np.random.normal(size=n)
 
 plt.scatter(x1, y1)
-plt.plot(np.unique(x1), np.poly1d(np.polyfit(x1, y1, 1))(np.unique(x1)), color='red')
+plt.plot(np.unique(x1),
+         np.poly1d(
+             np.polyfit(x1, y1, 1))
+         (np.unique(x1)),
+         color='red')
 plt.show()
